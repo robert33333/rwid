@@ -40,8 +40,12 @@ public class Data {
         if (args == null)
             exit(1);
         String propertiesPath = FILE_PATH_PROPERTIES;
-        if(args[1].equals("-path"))
-            propertiesPath = args[2];
+        try {
+            if (args[1].equals("-path"))
+                propertiesPath = args[2];
+        } catch (Exception e) {
+            System.out.println(ERROR_ARGS_NOT_PROVIDED);
+        }
         PropReader propReader = new PropReader(propertiesPath);
 
         for (String property : properties.keySet()) {

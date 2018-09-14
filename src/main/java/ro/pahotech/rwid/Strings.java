@@ -2,7 +2,8 @@ package ro.pahotech.rwid;
 
 class Strings {
     //properties
-    static final String ERROR_PROPERTY_NOT_FOUND = "WARNING: Could not read property: ";
+    static final String ERROR_ARGS_NOT_PROVIDED = "WARNING: 'properties' file path not provided. Using current directory.";
+    static final String ERROR_PROPERTY_NOT_FOUND = "WARNING: Could not read user defined property: ";
     static final String TABLE_NAME_CONDITIONS = "TABLE_NAME_CONDITIONS";
     static final String TABLE_NAME_SURFACE_CONDITIONS = "TABLE_NAME_SURFACE_CONDITIONS";
     static final String DEFAULT_TABLE_NAME_CONDITIONS = "CONDITIONS";
@@ -26,4 +27,6 @@ class Strings {
     static final String DEFAULT_TRAC_TABLE_NAME = "tmctools_dev.TRAC_TASKS";
     static final String DEFAULT_TRAC_SEQUENCE_NAME = "tmctools_dev.TMCTOOLS_SEQ";
     static final String ERROR_TRAC_INSERT = "Trac insert has failed!";
+
+    static final String ERROR_FATAL_ADD_MAIN_WATCHERS = "Could not successfully add watchers on targeted tables!";
 }

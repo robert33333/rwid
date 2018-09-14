@@ -28,7 +28,6 @@ public class TracHandler {
                     new SqlTableName(TRAC_TABLE_NAME),
                     new SqlSequenceName(TRAC_SEQUENCE_NAME));
             if (updatedRowsNum != 1) {
-                //ceva nu e bine!
                 System.out.println(ERROR_TRAC_INSERT);
             }
             tracTask.updateRow(databaseReader, new SqlTableName(TRAC_TABLE_NAME));
