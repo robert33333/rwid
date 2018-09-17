@@ -7,6 +7,7 @@ import pba.cxn.db.dbNotifier.oracle.OracleWatcher;
 
 import static java.lang.System.exit;
 import static ro.pahotech.rwid.Data.dbMapper;
+import static ro.pahotech.rwid.Data.properties;
 import static ro.pahotech.rwid.Strings.*;
 import static ro.pahotech.rwid.actions.ActionTableSurfaceConditions.executeActionTableNameSurfaceConditions;
 import static ro.pahotech.rwid.tableConditions.TableConditionsAction.executeActionTableNameConditions;
@@ -15,8 +16,8 @@ class Main {
     public static void main(String[] args) {
         Data.initialize(args);
 
-        createWatcher(TABLE_NAME_CONDITIONS);
-        createWatcher(TABLE_NAME_SURFACE_CONDITIONS);
+        createWatcher(properties.get(TABLE_NAME_CONDITIONS));
+        createWatcher(properties.get(TABLE_NAME_SURFACE_CONDITIONS));
     }
 
     private static void createWatcher(String tableName) {
@@ -50,10 +51,10 @@ class Main {
         if (dbEvent == null || tableName == null)
             return;
         switch (tableName) {
-            case TABLE_NAME_CONDITIONS:
+            case DEFAULT_TABLE_NAME_CONDITIONS:
                 executeActionTableNameConditions(dbEvent);
                 break;
-            case TABLE_NAME_SURFACE_CONDITIONS:
+            case DEFAULT_TABLE_NAME_SURFACE_CONDITIONS:
                 executeActionTableNameSurfaceConditions();
                 break;
             default: System.out.println(ERROR_ACTION_NOT_IMPLEMENTED);

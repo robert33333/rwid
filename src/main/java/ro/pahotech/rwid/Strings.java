@@ -6,15 +6,29 @@ class Strings {
     static final String ERROR_PROPERTY_NOT_FOUND = "WARNING: Could not read user defined property: ";
     static final String TABLE_NAME_CONDITIONS = "TABLE_NAME_CONDITIONS";
     static final String TABLE_NAME_SURFACE_CONDITIONS = "TABLE_NAME_SURFACE_CONDITIONS";
-    static final String DEFAULT_TABLE_NAME_CONDITIONS = "CONDITIONS";
-    static final String DEFAULT_TABLE_NAME_SURFACE_CONDITIONS = "SURFACE_CONDITIONS";
+    static final String DEFAULT_TABLE_NAME_CONDITIONS = "conditions";
+    static final String DEFAULT_TABLE_NAME_SURFACE_CONDITIONS = "surface_conditions";
 
     static final String DATABASE_URL = "DATABASE_URL";
     static final String DATABASE_USER = "DATABASE_USER";
     static final String DATABASE_PASSWORD = "DATABASE_PASSWORD";
-    static final String DEFAULT_DATABASE_URL = "jdbc:oracle:thin:@//ODAP01-SCAN:1521/odap01";
-    static final String DEFAULT_DATABASE_USER = "sensors";
-    static final String DEFAULT_DATABASE_PASSWORD = "s3ns()rs";
+    //  odap01-scan
+//    static final String DEFAULT_DATABASE_URL = "jdbc:oracle:thin:@//ODAP01-SCAN:1521/odap01";
+//    static final String DEFAULT_DATABASE_USER = "sensors";
+//    static final String DEFAULT_DATABASE_PASSWORD = "s3ns()rs";
+    //Virdev
+    static final String DEFAULT_DATABASE_URL = "jdbc:oracle:thin:@10.10.10.6:1521:xe";
+    static final String DEFAULT_DATABASE_USER = "virdev";
+    static final String DEFAULT_DATABASE_PASSWORD = "co5dgGsoJ";
+
+    static final String TRAC_DATABASE_URL = "TRAC_DATABASE_URL";
+    static final String TRAC_DATABASE_USER = "TRAC_DATABASE_USER";
+    static final String TRAC_DATABASE_PASSWORD = "TRAC_DATABASE_PASSWORD";
+
+    static final String TRAC_DEFAULT_DATABASE_URL = "jdbc:oracle:thin:@odap01-scan:1521/odap01";
+    static final String TRAC_DEFAULT_DATABASE_USER = "tmctools_dev";
+    static final String TRAC_DEFAULT_DATABASE_PASSWORD = "D0cHWatsun";
+
     static final String FILE_PATH_PROPERTIES = "properties.properties";
 
     static final String DB_MAPPER_NAME = "default";

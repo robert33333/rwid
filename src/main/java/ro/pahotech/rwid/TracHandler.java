@@ -14,23 +14,23 @@ public class TracHandler {
         try {
             TracTask tracTask = new TracTask();
             tracTask.setDescription(message);
-            tracTask.setSource("SSA_APPLICATION");
+            tracTask.setSource("RWIS");
             tracTask.setPriority(3);
             tracTask.setDistrict(0);
             tracTask.setCreatedAt(new Whenstamp());
-            tracTask.setCreatedBy("RWIS_MONITORING_APPLICATION");
+            tracTask.setCreatedBy("RWIS");
             DatabaseReader databaseReader = new DatabaseReader(
-                    Data.properties.get(DATABASE_URL),
-                    Data.properties.get(DATABASE_USER),
-                    new PlainText(Data.properties.get(DATABASE_PASSWORD)));
+                    Data.properties.get(TRAC_DATABASE_URL),
+                    Data.properties.get(TRAC_DATABASE_USER),
+                    new PlainText(Data.properties.get(TRAC_DATABASE_PASSWORD)));
             databaseReader.open();
             int updatedRowsNum = tracTask.insertRow(databaseReader,
-                    new SqlTableName(TRAC_TABLE_NAME),
-                    new SqlSequenceName(TRAC_SEQUENCE_NAME));
+                    new SqlTableName(Data.properties.get(TRAC_TABLE_NAME)),
+                    new SqlSequenceName(Data.properties.get(TRAC_SEQUENCE_NAME)));
             if (updatedRowsNum != 1) {
                 System.out.println(ERROR_TRAC_INSERT);
             }
-            tracTask.updateRow(databaseReader, new SqlTableName(TRAC_TABLE_NAME));
+            tracTask.updateRow(databaseReader, new SqlTableName(Data.properties.get(TRAC_TABLE_NAME)));
             databaseReader.close();
         }catch (Exception e){
             e.printStackTrace();

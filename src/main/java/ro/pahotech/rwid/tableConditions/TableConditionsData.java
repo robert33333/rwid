@@ -24,20 +24,23 @@ public class TableConditionsData {
     private static final String DEFAULT_LOWER_BOUND_C2LHPV_EBOR = "60";
     private static final String DEFAULT_LOWER_BOUND_STRONG_WIND_50 = "50";
     private static final String DEFAULT_LOWER_BOUND_STRONG_WIND = "40";
-    private static final String DEFAULT_MESSAGE_C2LHPV_EBOR = "RWIS reports C2LHPV or EBOR";
-    private static final String DEFAULT_MESSAGE_STRONG_WIND_50 = "RWIS reports Strong wind 50";
-    private static final String DEFAULT_MESSAGE_STRONG_WIND = "RWIS reports Strong wind";
+    static final String MESSAGE_STRONG_WIND_ALERT_DROP = "MESSAGE_STRONG_WIND_ALERT_DROP";
+    static final String COUNTER_C2LHPV_EBOR_FINISH_LIMIT = "COUNTER_C2LHPV_EBOR_FINISH_LIMIT";
+    private static final String DEFAULT_MESSAGE_C2LHPV_EBOR = "RWIS Checker reports C2LHPV or EBOR";
     private static final String DEFAULT_LABEL_VISIBILITY = "VISIBILITY";
     private static final String DEFAULT_LOWER_BOUND_NORMAL_VISIBILITY = "1000";
     private static final String DEFAULT_LOWER_BOUND_DROPPING_VISIBILITY = "420";
     private static final String DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY = "290";
     private static final String DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY_50 = "170";
-    private static final String DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY_35 = "170";
-    private static final String DEFAULT_MESSAGE_DROPPING_VISIBILITY = "RWIS reports DROPPING_VISIBILITY";
-    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY = "RWIS reports REDUCE_VISIBILITY";
-    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_50 = "RWIS reports REDUCE_VISIBILITY_50";
-    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_35 = "RWIS reports REDUCE_VISIBILITY_35";
-
+    private static final String DEFAULT_MESSAGE_STRONG_WIND_50 = "RWIS Checker reports STRONG WIND 50";
+    private static final String DEFAULT_MESSAGE_STRONG_WIND = "RWIS Checker reports SRRONG WIND";
+    private static final String DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY_35 = "0";
+    private static final String DEFAULT_MESSAGE_DROPPING_VISIBILITY = "RWIS Checker reports DROPPING VISIBILITY";
+    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY = "RWIS Checker reports REDUCE VISIBILITY";
+    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_50 = "RWIS Checker reports REDUCE VISIBILITY 50";
+    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_35 = "RWIS Checker reports REDUCE VISIBILITY 35";
+    private static final String DEFAULT_MESSAGE_STRONG_WIND_ALERT_DROP = "Strong wind alert has been dropped!";
+    private static final String DEFAULT_COUNTER_C2LHPV_EBOR_FINISH_LIMIT = "6";
 
     public static void initializeTableConditionsData() {
         properties.put(LABEL_GUST, DEFAULT_LABEL_GUST);
@@ -46,9 +49,13 @@ public class TableConditionsData {
         properties.put(LOWER_BOUND_STRONG_WIND_50, DEFAULT_LOWER_BOUND_STRONG_WIND_50);
         properties.put(LOWER_BOUND_STRONG_WIND, DEFAULT_LOWER_BOUND_STRONG_WIND);
 
+        properties.put(MESSAGE_STRONG_WIND_ALERT_DROP, DEFAULT_MESSAGE_STRONG_WIND_ALERT_DROP);
+
         properties.put(MESSAGE_C2LHPV_EBOR,DEFAULT_MESSAGE_C2LHPV_EBOR);
         properties.put(MESSAGE_STRONG_WIND_50,DEFAULT_MESSAGE_STRONG_WIND_50);
         properties.put(MESSAGE_STRONG_WIND,DEFAULT_MESSAGE_STRONG_WIND);
+
+        properties.put(COUNTER_C2LHPV_EBOR_FINISH_LIMIT, DEFAULT_COUNTER_C2LHPV_EBOR_FINISH_LIMIT);
 
         properties.put(LABEL_VISIBILITY, DEFAULT_LABEL_VISIBILITY);
 
