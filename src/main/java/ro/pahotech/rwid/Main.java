@@ -9,10 +9,10 @@ import static java.lang.System.exit;
 import static ro.pahotech.rwid.Data.dbMapper;
 import static ro.pahotech.rwid.Data.properties;
 import static ro.pahotech.rwid.Strings.*;
-import static ro.pahotech.rwid.actions.ActionTableSurfaceConditions.executeActionTableNameSurfaceConditions;
-import static ro.pahotech.rwid.tableConditions.TableConditionsAction.executeActionTableNameConditions;
+import static ro.pahotech.rwid.actions.tableConditions.TableConditionsAction.executeActionTableNameConditions;
+import static ro.pahotech.rwid.actions.tableSurfaceConditions.TableSurfaceConditionsAction.executeActionTableNameSurfaceConditions;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
         Data.initialize(args);
 
@@ -47,7 +47,7 @@ class Main {
         }
     }
 
-    private static void executeAction(DbEvent dbEvent, String tableName) {
+    public static void executeAction(DbEvent dbEvent, String tableName) {
         if (dbEvent == null || tableName == null)
             return;
         switch (tableName) {
@@ -55,7 +55,7 @@ class Main {
                 executeActionTableNameConditions(dbEvent);
                 break;
             case DEFAULT_TABLE_NAME_SURFACE_CONDITIONS:
-                executeActionTableNameSurfaceConditions();
+                executeActionTableNameSurfaceConditions(dbEvent);
                 break;
             default: System.out.println(ERROR_ACTION_NOT_IMPLEMENTED);
         }

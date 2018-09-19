@@ -1,4 +1,4 @@
-package ro.pahotech.rwid.tableConditions;
+package ro.pahotech.rwid.actions.tableConditions;
 
 public enum WindsPower {
     C2LHPV_EBOR,

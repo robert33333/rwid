@@ -8,10 +8,12 @@ import java.util.HashMap;
 
 import static java.lang.System.exit;
 import static ro.pahotech.rwid.Strings.*;
-import static ro.pahotech.rwid.tableConditions.TableConditionsData.initializeTableConditionsData;
+import static ro.pahotech.rwid.actions.tableConditions.TableConditionsData.initializeTableConditionsData;
+import static ro.pahotech.rwid.actions.tableSurfaceConditions.TableSurfaceConditionsData.initializeTableSurfaceConditionsData;
 
 public class Data {
     public static final HashMap<String,String> properties = new HashMap<>();
+    public static final HashMap<String, IceData> iceData = new HashMap<>();
 
     static DbMapper dbMapper;
 
@@ -31,6 +33,7 @@ public class Data {
     static void initialize(String args[]) {
         initializeData();
         initializeTableConditionsData();
+        initializeTableSurfaceConditionsData();
 
         readPropertiesFile(args);
 

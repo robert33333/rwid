@@ -1,6 +1,8 @@
 package ro.pahotech.rwid;
 
-class Strings {
+public class Strings {
+    //public static final String APP_NAME = "RWIS Checker";
+    public static final String APP_NAME_REPORTS = "RWIS reports: ";
     //properties
     static final String ERROR_ARGS_NOT_PROVIDED = "WARNING: 'properties' file path not provided. Using current directory.";
     static final String ERROR_PROPERTY_NOT_FOUND = "WARNING: Could not read user defined property: ";
@@ -16,7 +18,7 @@ class Strings {
 //    static final String DEFAULT_DATABASE_URL = "jdbc:oracle:thin:@//ODAP01-SCAN:1521/odap01";
 //    static final String DEFAULT_DATABASE_USER = "sensors";
 //    static final String DEFAULT_DATABASE_PASSWORD = "s3ns()rs";
-    //Virdev
+    //  virdev
     static final String DEFAULT_DATABASE_URL = "jdbc:oracle:thin:@10.10.10.6:1521:xe";
     static final String DEFAULT_DATABASE_USER = "virdev";
     static final String DEFAULT_DATABASE_PASSWORD = "co5dgGsoJ";

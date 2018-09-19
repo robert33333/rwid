@@ -1,49 +1,72 @@
-package ro.pahotech.rwid.tableConditions;
+package ro.pahotech.rwid.actions.tableConditions;
 
 import static ro.pahotech.rwid.Data.properties;
+import static ro.pahotech.rwid.Strings.APP_NAME_REPORTS;
 
 public class TableConditionsData {
+    public static final String MESSAGE_ICE = "MESSAGE_ICE";
+    public static final String MESSAGE_ICE_LIFT = "MESSAGE_ICE_LIFT";
+    static final String BAD_MESSAGE = "BAD_MESSAGE";
+    static final String ADDED_MESSAGE_DESCRIPTION = "ADDED_MESSAGE_DESCRIPTION";
+    static final String LABEL_ID = "LABEL_ID";
     static final String LABEL_GUST = "LABEL_GUST";
+    static final String LABEL_VISIBILITY = "LABEL_VISIBILITY";
+    static final String LABEL_RELATIVE_HUMIDITY = "LABEL_RELATIVE_HUMIDITY";
     static final String LOWER_BOUND_C2LHPV_EBOR = "LOWER_BOUND_C2LHPV_EBOR";
     static final String LOWER_BOUND_STRONG_WIND_50 = "LOWER_BOUND_STRONG_WIND_50";
     static final String LOWER_BOUND_STRONG_WIND = "LOWER_BOUND_STRONG_WIND";
     static final String MESSAGE_C2LHPV_EBOR = "MESSAGE_C2LHPV_EBOR";
     static final String MESSAGE_STRONG_WIND_50 = "MESSAGE_STRONG_WIND_50";
     static final String MESSAGE_STRONG_WIND = "MESSAGE_STRONG_WIND";
-    static final String LABEL_VISIBILITY = "LABEL_VISIBILITY";
     static final String LOWER_BOUND_NORMAL_VISIBILITY = "LOWER_BOUND_NORMAL_VISIBILITY";
     static final String LOWER_BOUND_DROPPING_VISIBILITY = "LOWER_BOUND_DROPPING_VISIBILITY";
     static final String LOWER_BOUND_REDUCE_VISIBILITY = "LOWER_BOUND_REDUCE_VISIBILITY";
     static final String LOWER_BOUND_REDUCE_VISIBILITY_50 = "LOWER_BOUND_REDUCE_VISIBILITY_50";
     static final String LOWER_BOUND_REDUCE_VISIBILITY_35 = "LOWER_BOUND_REDUCE_VISIBILITY_35";
+    static final String MESSAGE_NORMAL_VISIBILITY = "MESSAGE_NORMAL_VISIBILITY";
     static final String MESSAGE_DROPPING_VISIBILITY = "MESSAGE_DROPPING_VISIBILITY";
     static final String MESSAGE_REDUCE_VISIBILITY = "MESSAGE_REDUCE_VISIBILITY";
     static final String MESSAGE_REDUCE_VISIBILITY_50 = "MESSAGE_REDUCE_VISIBILITY_50";
     static final String MESSAGE_REDUCE_VISIBILITY_35 = "MESSAGE_REDUCE_VISIBILITY_35";
+    static final String LOWER_BOUND_RELATIVE_HUMIDITY = "LOWER_BOUND_RELATIVE_HUMIDITY";
+    private static final String DEFAULT_BAD_MESSAGE = "This message had been corrupted!";
+    private static final String DEFAULT_ADDED_MESSAGE_DESCRIPTION = " for site_id: ";
+    private static final String DEFAULT_LABEL_ID = "SITEID";
     private static final String DEFAULT_LABEL_GUST = "WINDSPEED_GUST";
+    private static final String DEFAULT_LABEL_VISIBILITY = "VISIBILITY";
+    private static final String DEFAULT_LABEL_RELATIVE_HUMIDITY = "RELATIVE_HUMIDITY";
     private static final String DEFAULT_LOWER_BOUND_C2LHPV_EBOR = "60";
     private static final String DEFAULT_LOWER_BOUND_STRONG_WIND_50 = "50";
     private static final String DEFAULT_LOWER_BOUND_STRONG_WIND = "40";
     static final String MESSAGE_STRONG_WIND_ALERT_DROP = "MESSAGE_STRONG_WIND_ALERT_DROP";
     static final String COUNTER_C2LHPV_EBOR_FINISH_LIMIT = "COUNTER_C2LHPV_EBOR_FINISH_LIMIT";
-    private static final String DEFAULT_MESSAGE_C2LHPV_EBOR = "RWIS Checker reports C2LHPV or EBOR";
-    private static final String DEFAULT_LABEL_VISIBILITY = "VISIBILITY";
-    private static final String DEFAULT_LOWER_BOUND_NORMAL_VISIBILITY = "1000";
+    private static final String DEFAULT_MESSAGE_C2LHPV_EBOR = APP_NAME_REPORTS + " C2LHPV or EBOR";
+    private static final String DEFAULT_LOWER_BOUND_NORMAL_VISIBILITY = "750";
     private static final String DEFAULT_LOWER_BOUND_DROPPING_VISIBILITY = "420";
     private static final String DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY = "290";
     private static final String DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY_50 = "170";
-    private static final String DEFAULT_MESSAGE_STRONG_WIND_50 = "RWIS Checker reports STRONG WIND 50";
-    private static final String DEFAULT_MESSAGE_STRONG_WIND = "RWIS Checker reports SRRONG WIND";
+    private static final String DEFAULT_MESSAGE_STRONG_WIND_50 = APP_NAME_REPORTS + " STRONG WIND 50";
+    private static final String DEFAULT_MESSAGE_STRONG_WIND = APP_NAME_REPORTS + " STRONG WIND";
     private static final String DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY_35 = "0";
-    private static final String DEFAULT_MESSAGE_DROPPING_VISIBILITY = "RWIS Checker reports DROPPING VISIBILITY";
-    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY = "RWIS Checker reports REDUCE VISIBILITY";
-    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_50 = "RWIS Checker reports REDUCE VISIBILITY 50";
-    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_35 = "RWIS Checker reports REDUCE VISIBILITY 35";
-    private static final String DEFAULT_MESSAGE_STRONG_WIND_ALERT_DROP = "Strong wind alert has been dropped!";
+    private static final String DEFAULT_MESSAGE_NORMAL_VISIBILITY = APP_NAME_REPORTS + " NORMAL VISIBILITY";
+    private static final String DEFAULT_MESSAGE_DROPPING_VISIBILITY = APP_NAME_REPORTS + " DROPPING VISIBILITY";
+    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY = APP_NAME_REPORTS + " REDUCE VISIBILITY";
+    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_50 = APP_NAME_REPORTS + " REDUCE VISIBILITY 50";
+    private static final String DEFAULT_MESSAGE_REDUCE_VISIBILITY_35 = APP_NAME_REPORTS + " REDUCE VISIBILITY 35";
+    private static final String DEFAULT_MESSAGE_STRONG_WIND_ALERT_DROP = "STRONG WIND alert has been dropped";
+    private static final String DEFAULT_MESSAGE_ICE = APP_NAME_REPORTS + " WATCH FOR ICE";
+    private static final String DEFAULT_MESSAGE_ICE_LIFT = APP_NAME_REPORTS + " WATCH FOR ICE LIFTED";
+    private static final String DEFAULT_LOWER_BOUND_RELATIVE_HUMIDITY = "90";
     private static final String DEFAULT_COUNTER_C2LHPV_EBOR_FINISH_LIMIT = "6";
 
     public static void initializeTableConditionsData() {
+        properties.put(BAD_MESSAGE, DEFAULT_BAD_MESSAGE);
+        properties.put(ADDED_MESSAGE_DESCRIPTION, DEFAULT_ADDED_MESSAGE_DESCRIPTION);
+
+        properties.put(LABEL_ID, DEFAULT_LABEL_ID);
         properties.put(LABEL_GUST, DEFAULT_LABEL_GUST);
+        properties.put(LABEL_VISIBILITY, DEFAULT_LABEL_VISIBILITY);
+        properties.put(LABEL_RELATIVE_HUMIDITY, DEFAULT_LABEL_RELATIVE_HUMIDITY);
 
         properties.put(LOWER_BOUND_C2LHPV_EBOR, DEFAULT_LOWER_BOUND_C2LHPV_EBOR);
         properties.put(LOWER_BOUND_STRONG_WIND_50, DEFAULT_LOWER_BOUND_STRONG_WIND_50);
@@ -57,17 +80,21 @@ public class TableConditionsData {
 
         properties.put(COUNTER_C2LHPV_EBOR_FINISH_LIMIT, DEFAULT_COUNTER_C2LHPV_EBOR_FINISH_LIMIT);
 
-        properties.put(LABEL_VISIBILITY, DEFAULT_LABEL_VISIBILITY);
-
         properties.put(LOWER_BOUND_NORMAL_VISIBILITY, DEFAULT_LOWER_BOUND_NORMAL_VISIBILITY);
         properties.put(LOWER_BOUND_DROPPING_VISIBILITY, DEFAULT_LOWER_BOUND_DROPPING_VISIBILITY);
         properties.put(LOWER_BOUND_REDUCE_VISIBILITY, DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY);
         properties.put(LOWER_BOUND_REDUCE_VISIBILITY_50, DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY_50);
         properties.put(LOWER_BOUND_REDUCE_VISIBILITY_35, DEFAULT_LOWER_BOUND_REDUCE_VISIBILITY_35);
 
+        properties.put(MESSAGE_NORMAL_VISIBILITY, DEFAULT_MESSAGE_NORMAL_VISIBILITY);
         properties.put(MESSAGE_DROPPING_VISIBILITY, DEFAULT_MESSAGE_DROPPING_VISIBILITY);
         properties.put(MESSAGE_REDUCE_VISIBILITY, DEFAULT_MESSAGE_REDUCE_VISIBILITY);
         properties.put(MESSAGE_REDUCE_VISIBILITY_50, DEFAULT_MESSAGE_REDUCE_VISIBILITY_50);
         properties.put(MESSAGE_REDUCE_VISIBILITY_35, DEFAULT_MESSAGE_REDUCE_VISIBILITY_35);
+
+        properties.put(LOWER_BOUND_RELATIVE_HUMIDITY, DEFAULT_LOWER_BOUND_RELATIVE_HUMIDITY);
+
+        properties.put(MESSAGE_ICE, DEFAULT_MESSAGE_ICE);
+        properties.put(MESSAGE_ICE_LIFT, DEFAULT_MESSAGE_ICE_LIFT);
     }
 }
