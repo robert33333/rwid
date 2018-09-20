@@ -6,7 +6,6 @@ import ro.pahotech.rwid.IceData;
 
 import static ro.pahotech.rwid.Data.iceData;
 import static ro.pahotech.rwid.Data.properties;
-import static ro.pahotech.rwid.IceData.NULL;
 import static ro.pahotech.rwid.TracHandler.sendTracMessage;
 import static ro.pahotech.rwid.actions.tableConditions.TableConditionsAction.formMessage;
 import static ro.pahotech.rwid.actions.tableConditions.TableConditionsData.MESSAGE_ICE;
@@ -34,16 +33,16 @@ public class TableSurfaceConditionsAction {
         IceData currentIceData = iceData.get(siteID);
         if (surfTemp < Integer.parseInt(properties.get(LOWER_BOUND_SURF_TEMP))) {
             if (currentIceData != null) {
-                currentIceData.setSurfTemp(surfTemp);
-                if (currentIceData.getRelativeHumidity() != NULL) {
+                currentIceData.setLowSurfTemp(true);
+                if (currentIceData.isRelativeHumidity()) {
                     sendTracMessage(formMessage(properties.get(MESSAGE_ICE), siteID));
                 }
             } else {
-                iceData.put(siteID, new IceData(surfTemp, NULL));
+                iceData.put(siteID, new IceData(true, false));
             }
         } else {
             if (currentIceData != null) {
-                currentIceData.setSurfTemp(surfTemp);
+                currentIceData.setLowSurfTemp(false);
                 if (currentIceData.isAlertSent()) {
                     currentIceData.setAlertSent(false);
                     sendTracMessage(formMessage(properties.get(MESSAGE_ICE_LIFT), siteID));

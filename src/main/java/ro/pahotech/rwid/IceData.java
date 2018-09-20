@@ -1,30 +1,29 @@
 package ro.pahotech.rwid;
 
 public class IceData {
-    public static final int NULL = Integer.MIN_VALUE;
-    private int relativeHumidity;
-    private int surfTemp;
+    private boolean relativeHumidity;
+    private boolean lowSurfTemp;
     private boolean alertSent = false;
 
-    public IceData(int relativeHumidity, int surfTemp) {
+    public IceData(boolean relativeHumidity, boolean lowSurfTemp) {
         this.relativeHumidity = relativeHumidity;
-        this.surfTemp = surfTemp;
+        this.lowSurfTemp = lowSurfTemp;
     }
 
-    public int getRelativeHumidity() {
+    public boolean isRelativeHumidity() {
         return relativeHumidity;
     }
 
-    public void setRelativeHumidity(int relativeHumidity) {
+    public void setRelativeHumidity(boolean relativeHumidity) {
         this.relativeHumidity = relativeHumidity;
     }
 
-    public int getSurfTemp() {
-        return surfTemp;
+    public boolean isLowSurfTemp() {
+        return lowSurfTemp;
     }
 
-    public void setSurfTemp(int surfTemp) {
-        this.surfTemp = surfTemp;
+    public void setLowSurfTemp(boolean lowSurfTemp) {
+        this.lowSurfTemp = lowSurfTemp;
     }
 
     public boolean isAlertSent() {

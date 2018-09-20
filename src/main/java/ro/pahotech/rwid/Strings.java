@@ -1,8 +1,8 @@
 package ro.pahotech.rwid;
 
 public class Strings {
-    //public static final String APP_NAME = "RWIS Checker";
-    public static final String APP_NAME_REPORTS = "RWIS reports: ";
+    private static final String APP_NAME = "RWIS Checker";
+    public static final String APP_NAME_REPORTS = APP_NAME + " reports: ";
     //properties
     static final String ERROR_ARGS_NOT_PROVIDED = "WARNING: 'properties' file path not provided. Using current directory.";
     static final String ERROR_PROPERTY_NOT_FOUND = "WARNING: Could not read user defined property: ";
